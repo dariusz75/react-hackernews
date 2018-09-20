@@ -24,6 +24,15 @@ const list = [
 ];
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      list: list,
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -31,7 +40,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-          {list.map(function(item) {
+          {this.state.list.map(function(item) {
               return <div key={item.id}>
                       <p>{item.id}</p>
                       <p>{item.title}</p>
